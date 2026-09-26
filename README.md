@@ -1,4 +1,4 @@
-# BBC - Sistem Manajemen Toko & Gudang
+# Sistem Manajemen Toko & Gudang
 
 Aplikasi web (PHP native + MySQL, tanpa framework) untuk mengelola stok produk (Senjata,
 Ammo, Attachment, Narko, Spesial, Lainnya), akun Staff/Admin & Homies (member), alur belanja
