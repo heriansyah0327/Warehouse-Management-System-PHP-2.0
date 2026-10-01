@@ -528,3 +528,58 @@ input:focus, select:focus { outline: none; border-color: var(--blue-600); }
   .login-card { padding: 28px 22px; }
   .stat-card .value { font-size: 20px; }
 }
+
+/* =====================================================
+   Brangkas (stok gudang, read-only)
+   ===================================================== */
+.vault-note { margin: 0 0 16px; font-size: 13.5px; color: var(--text-muted); }
+
+/* ---------- Uang Merah / Uang Putih ---------- */
+.vault-money-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 20px; }
+.vault-money {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  border-top: 4px solid var(--border);
+  padding: 18px 20px; display: flex; align-items: center; gap: 16px;
+}
+.vault-money.merah { border-top-color: var(--red-600); }
+.vault-money.putih { border-top-color: var(--green-600); }
+.vm-img {
+  width: 64px; height: 64px; flex-shrink: 0; border-radius: 12px; background: #eef1f7;
+  display: flex; align-items: center; justify-content: center; overflow: hidden; font-size: 30px;
+}
+.vm-img img { width: 100%; height: 100%; object-fit: contain; }
+.vm-label { font-size: 12.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+.vm-value { font-size: 28px; font-weight: 800; line-height: 1.2; margin: 2px 0; }
+.vault-money.merah .vm-value { color: var(--red-600); }
+.vault-money.putih .vm-value { color: var(--green-700); }
+.vm-sub { font-size: 12.5px; color: var(--text-muted); }
+
+/* ---------- Grid item gudang (read-only) ---------- */
+.vault-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 16px; }
+.vault-card {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px; display: flex; flex-direction: column; gap: 8px;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.vault-card:hover { box-shadow: 0 8px 22px rgba(11,27,58,0.10); transform: translateY(-2px); }
+.vc-img {
+  height: 120px; border-radius: 10px; background: #eef1f7;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.vc-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.vc-img .pc-noimg { font-size: 40px; }
+.vc-cat { align-self: flex-start; background: var(--blue-50); color: var(--blue-600); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px; }
+.vc-name { font-size: 14px; font-weight: 600; line-height: 1.35; }
+.vc-qty { font-size: 22px; font-weight: 800; margin-top: auto; }
+.vault-card.is-habis .vc-img { opacity: .5; }
+.vault-card.is-habis .vc-name, .vault-card.is-habis .vc-qty { color: var(--text-muted); }
+.vc-habis { font-size: 12px; font-weight: 600; color: var(--red-600); margin-top: auto; }
+
+@media (max-width: 860px) {
+  .vault-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .vc-img { height: 100px; }
+}
+@media (max-width: 560px) {
+  .vault-money-grid { grid-template-columns: 1fr; }
+  .vm-value { font-size: 24px; }
+}
