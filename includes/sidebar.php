@@ -36,6 +36,11 @@ if ($isManagement) {
             🏠 Dashboard
         </a>
 
+        <!-- Brangkas: lihat stok gudang (semua role, read-only) -->
+        <a class="nav-item <?= $active_menu === 'brangkas' ? 'active' : '' ?>" href="<?= e($base) ?>brangkas/brangkas.php">
+            🔐 Brangkas
+        </a>
+
         <?php if ($isManagement): ?>
 
             <!-- Dropdown: Management (admin & staff saja) -->
